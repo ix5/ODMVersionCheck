@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         //Register helper hook on help view button
         val helpBtn: FloatingActionButton = findViewById(R.id.helpBtn)
         helpBtn.setOnClickListener {
-            val uri: Uri = Uri.parse(readSysProp("ro.odm.download")?: "https://developer.sony.com/develop/open-devices/downloads/software-binaries")
+            val uri: Uri = Uri.parse(this.applicationContext.getString(R.string.helpUri))
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }
