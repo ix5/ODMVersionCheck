@@ -27,5 +27,7 @@
         </receiver>
     </application>
 
+    <!-- Needed for reading the needed device properties -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 </manifest>

@@ -34,13 +34,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         //Update the views data fields
-        val gotVersionText: TextView = findViewById(R.id.gotVersion)
         val expVersionText: TextView = findViewById(R.id.expVersion)
-        val gotVersion = getCurrentODMVersion()
+        val gotVersionText: TextView = findViewById(R.id.gotVersion)
         val expVersion = getExpectedODMVersion()
-        gotVersionText.text = gotVersion.raw?:"?"
-        expVersionText.text = expVersion.raw?:"?"
-        if(gotVersion.raw != expVersion.raw)
+        val gotVersion = getCurrentODMVersion()
+        if(expVersion != null)
+            expVersionText.text = expVersion!!.raw
+        if(gotVersion != null)
+            gotVersionText.text = gotVersion!!.raw
+        if(expVersion != null || (gotVersion != null && expVersion!!.raw != gotVersion!!.raw))
             gotVersionText.setTextColor(Color.RED)
     }
 }
