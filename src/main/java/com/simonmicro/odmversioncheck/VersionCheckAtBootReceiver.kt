@@ -19,8 +19,10 @@ class VersionCheckAtBootReceiver : BroadcastReceiver() {
             val propCurVers = getCurrentODMVersion()
 
             //Ignore the following checks if the expected version is not set!
-            if(propExpVers == null)
+            if(propExpVers == null) {
+                Log.i(TAG, "No expected odm version found - shutting down.")
                 isVersionCorrect = true
+            }
             if(propCurVers != null) {
                 //Log to the console (for later use in logcat)
                 Log.i(TAG, propExpVers!!.raw)
