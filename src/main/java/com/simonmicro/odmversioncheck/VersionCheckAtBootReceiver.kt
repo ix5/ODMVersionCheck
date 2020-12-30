@@ -56,7 +56,7 @@ class VersionCheckAtBootReceiver : BroadcastReceiver() {
             )
 
             val builder = NotificationCompat.Builder(context, "default")
-                .setSmallIcon(R.drawable.ic_baseline_priority_high_24)
+                .setSmallIcon(R.drawable.ic_baseline_memory_24)
                 .setContentTitle(context.getString(R.string.notify_title))
                 .setContentText(context.getString(R.string.notify_text))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
