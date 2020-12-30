@@ -12,7 +12,7 @@ class VersionCheckAtBootReceiver : BroadcastReceiver() {
     private val TAG: String = "VersionCheckAtBootReceiver"
 
     override fun onReceive(context: Context, intent: Intent) {
-        if (Intent.ACTION_BOOT_COMPLETED == intent.action) {
+        if (Intent.ACTION_BOOT_COMPLETED == intent.action || Intent.ACTION_LOCKED_BOOT_COMPLETED == intent.action) {
             var isVersionCorrect = false;
             //Read the getprop (when not available treat as incorrect)
             val propExpVers = getExpectedODMVersion()
