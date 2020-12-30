@@ -3,7 +3,7 @@ package com.simonmicro.odmversioncheck
 import android.os.Build
 
 /**
- * Should hold parsed string data like "ro.odm.expected.version" -> "10_4.14_seine_v12"
+ * Should hold parsed string data like "ro.odm.expect.version" -> "10_4.14_seine_v12"
  */
 class ODMVersion(rawStr: String) {
     val androidVer: Int;
