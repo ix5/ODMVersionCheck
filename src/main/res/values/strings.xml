@@ -4,12 +4,12 @@
     <string name="exp_version">Expected Version</string>
     <string name="got_version">Found Version</string>
     <string name="explanation">
-        The ODM version check has failed! This means the os is currently using
+        The ODM version check has failed! This means your system is currently using
         a version of the proprietary binaries, which your Android is not build for. This may will work
         without further problems, but could also harm your device.\n
-        Please consider upgrading your them as soon as possible. Commonly you could just flash the oem
-        partition(s) with them - but for further reference please visit a guide for your device (you
-        may press the button below).\n
+        Please consider upgrading them as soon as possible. Commonly you could just flash the oem
+        partition(s) with them - but for further reference please visit a guide for your specific device
+        (you may press the help button below).\n
         When you are the maintainer of this rom you should think about overriding the respective property.
     </string>
     <string name="notify_title">ODM Version check failed!</string>
