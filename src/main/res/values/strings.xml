@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ODM Version Check</string>
+    <string name="exp_version">Expected Version</string>
+    <string name="got_version">Found Version</string>
+    <string name="explanation">
+        The ODM version check has failed! This means the os is currently using
+        a version of the proprietary binaries, which your Android is not build for. This may will work
+        without further problems, but could also harm your device.\n
+        Please consider upgrading your them as soon as possible. Commonly you could just flash the oem
+        partition(s) with them - but for further reference please visit a guide for your device (you
+        may press the button below).\n
+        When you are the maintainer of this rom you should think about overriding the respective property.
+    </string>
+    <string name="notify_title">ODM Version check failed!</string>
+    <string name="notify_text">Your system is running an unsupported version of the software binaries. Tap here to learn more!</string>
+</resources>
