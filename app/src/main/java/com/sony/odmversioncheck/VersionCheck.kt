@@ -10,6 +10,7 @@ import android.os.IBinder
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import java.lang.reflect.Array.getBoolean
 
 class VersionCheck : Service() {
     private val TAG: String = "ODMVersionCheck"
@@ -32,17 +33,24 @@ class VersionCheck : Service() {
             Log.i(TAG, propCurVers.raw)
 
             //Parse it and make sure it is as expected (ignore mismatching kernel/android versions)
-            if (propCurVers.androidVer != propExpVers.androidVer)
+            var checkAlreadyFailed = false
+            if (propCurVers.androidVer != propExpVers.androidVer) {
                 Log.w(TAG, "Unexpected android version found!")
-            if (propCurVers.kernelVer != propExpVers.kernelVer)
+                if(resources.getBoolean(R.bool.strictCheck))
+                    checkAlreadyFailed = true
+            }
+            if (propCurVers.kernelVer != propExpVers.kernelVer) {
                 Log.w(TAG, "Unexpected kernel version found!")
+                if(resources.getBoolean(R.bool.strictCheck))
+                    checkAlreadyFailed = true
+            }
 
             //Verify matching kernel + platform
             if (propCurVers.binaryVer != propExpVers.binaryVer)
                 Log.e(TAG, "Unexpected binary version found!")
             else if (propCurVers.deviceFamily != propExpVers.deviceFamily)
                 Log.e(TAG, "Unexpected device family version found!")
-            else
+            else if(!checkAlreadyFailed)
                 isVersionCorrect = true
         }
 
