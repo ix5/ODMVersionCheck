@@ -1,0 +1,11 @@
+android_app {
+    name: "ODMVersionCheck",
+    certificate: "platform",
+
+    proprietary: true,
+    privileged: true,
+
+    srcs: ["app/src/**/*.kt"],
+    
+    sdk_version: "system_current",
+}
