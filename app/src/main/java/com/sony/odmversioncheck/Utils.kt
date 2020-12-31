@@ -1,4 +1,4 @@
-package com.simonmicro.odmversioncheck
+package com.sony.odmversioncheck
 
 import java.io.BufferedReader
 import java.io.InputStreamReader

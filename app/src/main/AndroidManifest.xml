@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     coreApp="true"
-    package="com.simonmicro.odmversioncheck">
+    package="com.sony.odmversioncheck">
 
     <application
         android:persistent="true"
@@ -19,7 +19,7 @@
 
         </activity>
 
-        <receiver android:name="com.simonmicro.odmversioncheck.AtBootReceiver">
+        <receiver android:name="com.sony.odmversioncheck.AtBootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />

@@ -1,4 +1,4 @@
-package com.simonmicro.odmversioncheck
+package com.sony.odmversioncheck
 
 import android.content.BroadcastReceiver
 import android.content.Context

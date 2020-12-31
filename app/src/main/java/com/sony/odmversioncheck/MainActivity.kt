@@ -1,4 +1,4 @@
-package com.simonmicro.odmversioncheck
+package com.sony.odmversioncheck
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
