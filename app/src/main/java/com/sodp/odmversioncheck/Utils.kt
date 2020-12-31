@@ -1,4 +1,4 @@
-package com.sony.odmversioncheck
+package com.sodp.odmversioncheck
 
 import java.io.BufferedReader
 import java.io.InputStreamReader

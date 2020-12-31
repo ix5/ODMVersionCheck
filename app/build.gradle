@@ -8,7 +8,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.sony.odmversioncheck"
+        applicationId "com.sodp.odmversioncheck"
         minSdkVersion 29
         targetSdkVersion 29
         versionCode 1
