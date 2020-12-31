@@ -19,12 +19,13 @@
 
         </activity>
 
-        <receiver android:name="com.simonmicro.odmversioncheck.VersionCheckAtBootReceiver">
+        <receiver android:name="com.simonmicro.odmversioncheck.AtBootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+        <service android:name=".VersionCheck" />
     </application>
 
     <!-- Needed for reading the needed device properties -->
