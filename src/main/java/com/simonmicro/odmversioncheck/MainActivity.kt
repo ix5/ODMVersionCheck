@@ -17,14 +17,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Create a new notification channel for later use
-        //TODO May move this into the receiver section
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val mChannel = NotificationChannel("default", "default", NotificationManager.IMPORTANCE_DEFAULT) //IMPORTANCE_LOW to mark notifications as silent
-            val notificationManager = this.getSystemService(AppCompatActivity.NOTIFICATION_SERVICE) as NotificationManager
-            notificationManager.createNotificationChannel(mChannel)
-        }
-
         //Register helper hook on help view button
         val helpBtn: FloatingActionButton = findViewById(R.id.helpBtn)
         helpBtn.setOnClickListener {
