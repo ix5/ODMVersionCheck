@@ -26,8 +26,7 @@ class VersionCheck : Service() {
         if(propExpVers == null) {
             Log.i(TAG, "No expected odm version found - shutting down.")
             isVersionCorrect = true
-        }
-        if(propCurVers != null) {
+        } else if(propCurVers != null) {
             //Log to the console (for later use in logcat)
             Log.i(TAG, propExpVers!!.raw)
             Log.i(TAG, propCurVers!!.raw)
