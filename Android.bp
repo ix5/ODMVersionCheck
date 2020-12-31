@@ -1,0 +1,38 @@
+android_app {
+    name: "ODMVersionCheck",
+    certificate: "platform",
+
+    vendor: true,
+    privileged: true,
+    //platform_apis: true,
+
+    srcs: ["src/**/*.kt"],
+
+    static_libs: [
+        "androidx.appcompat_appcompat",
+        "androidx.core_core",
+        "androidx-constraintlayout_constraintlayout",
+        "com.google.android.material_material",
+    ],
+
+    optimize: {
+        enabled: false,
+    },
+
+    resource_dirs: ["res"],
+
+    // For subdirs:
+    //manifest: "AndroidManifest.xml",
+
+    sdk_version: "system_current",
+
+    required: ["privapp-permissions-odmversioncheck"],
+}
+
+prebuilt_etc {
+    name: "privapp_whitelist_odmversioncheck",
+    src: "privapp_whitelist_odmversioncheck.xml",
+    sub_dir: "permissions",
+    filename_from_src: true,
+    vendor: true,
+}
