@@ -28,19 +28,19 @@ class VersionCheck : Service() {
             isVersionCorrect = true
         } else if(propCurVers != null) {
             //Log to the console (for later use in logcat)
-            Log.i(TAG, propExpVers!!.raw)
-            Log.i(TAG, propCurVers!!.raw)
+            Log.i(TAG, propExpVers.raw)
+            Log.i(TAG, propCurVers.raw)
 
             //Parse it and make sure it is as expected (ignore mismatching kernel/android versions)
-            if (propCurVers!!.androidVer != propExpVers!!.androidVer)
+            if (propCurVers.androidVer != propExpVers.androidVer)
                 Log.w(TAG, "Unexpected android version found!")
-            if (propCurVers!!.kernelVer != propExpVers!!.kernelVer)
+            if (propCurVers.kernelVer != propExpVers.kernelVer)
                 Log.w(TAG, "Unexpected kernel version found!")
 
             //Verify matching kernel + platform
-            if (propCurVers!!.binaryVer != propExpVers!!.binaryVer)
+            if (propCurVers.binaryVer != propExpVers.binaryVer)
                 Log.e(TAG, "Unexpected binary version found!")
-            else if (propCurVers!!.deviceFamily != propExpVers!!.deviceFamily)
+            else if (propCurVers.deviceFamily != propExpVers.deviceFamily)
                 Log.e(TAG, "Unexpected device family version found!")
             else
                 isVersionCorrect = true
