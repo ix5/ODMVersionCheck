@@ -22,4 +22,14 @@ android_app {
         enabled: true, // Disable for faster development iteration
     },
     sdk_version: "system_current",
+
+    required: ["privapp-permissions-odmversioncheck"],
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-odmversioncheck",
+    src: "privapp-permissions-odmversioncheck.xml",
+    sub_dir: "permissions",
+    filename_from_src: true,
+    vendor: true,
 }
