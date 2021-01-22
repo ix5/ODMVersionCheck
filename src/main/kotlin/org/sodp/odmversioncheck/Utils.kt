@@ -34,7 +34,7 @@ fun shellExec(cmd: String): String? {
     var o: String = ""
     val p = Runtime.getRuntime().exec(cmd)
     val b = BufferedReader(InputStreamReader(p.inputStream))
-    var line: String? = null
+    var line: String?
     while (b.readLine().also { line = it } != null) {
         o += line
     }

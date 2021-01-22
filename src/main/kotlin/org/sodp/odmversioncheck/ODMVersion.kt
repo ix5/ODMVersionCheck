@@ -14,8 +14,8 @@ class ODMVersion(rawStr: String) {
 
     init {
         val verReg = Regex("(\\d+)_(\\d+\\.\\d+)_([A-Za-z]*)_v(\\d+[a-z]?)");
-        assert(rawStr!!.matches(verReg));
-        this.raw = rawStr!!;
+        assert(rawStr.matches(verReg));
+        this.raw = rawStr;
         val matchRes = verReg.find(this.raw);
         val (androidVer, kernelVer, deviceFamily, binaryVer) = matchRes!!.destructured;
         this.androidVer = androidVer.toInt();

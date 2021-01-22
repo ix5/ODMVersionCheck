@@ -5,7 +5,6 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.Service
 import android.content.Intent
-import android.os.Build
 import android.os.IBinder
 import android.util.Log
 import androidx.core.app.NotificationCompat
@@ -24,13 +23,10 @@ class VersionCheck : Service() {
         val propCurVers = getCurrentODMVersion()
 
         //Ignore the following checks if the expected version is not set!
-        if(propExpVers == null) {
+        if (propExpVers == null) {
             Log.i(TAG, "No expected odm version found - shutting down.")
             isVersionCorrect = true
         } else if(propCurVers != null) {
-            //Log to the console (for later use in logcat)
-            Log.i(TAG, propExpVers.raw)
-            Log.i(TAG, propCurVers.raw)
 
             //Parse it and make sure it is as expected (ignore mismatching kernel/android versions)
             var checkAlreadyFailed = false
@@ -59,11 +55,13 @@ class VersionCheck : Service() {
             return
 
         //(Re-)create a new notification channel for later use
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val mChannel = NotificationChannel("default", "default", NotificationManager.IMPORTANCE_DEFAULT) //IMPORTANCE_LOW to mark notifications as silent
-            val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
-            notificationManager.createNotificationChannel(mChannel)
-        }
+        val mChannel = NotificationChannel(
+            "default",
+            "default",
+            NotificationManager.IMPORTANCE_DEFAULT //IMPORTANCE_LOW to mark notifications as silent
+        )
+        val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.createNotificationChannel(mChannel)
 
         //Otherwise show notification to open the MainActivity
 
