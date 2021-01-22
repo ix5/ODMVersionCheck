@@ -6,7 +6,7 @@ import android.content.Intent
 import android.os.Build
 
 
-class AtBootReceiver : BroadcastReceiver() {
+class BootReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         //Start on newer versions a foreground service, otherwise we are maybe not "whitelisted" after boot...
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
