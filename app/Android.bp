@@ -1,0 +1,25 @@
+android_app {
+    name: "ODMVersionCheck",
+    certificate: "platform",
+
+    vendor: true,
+    privileged: true,
+
+    manifest: "src/main/AndroidManifest.xml",
+
+    srcs: ["src/**/*.kt"],
+
+    static_libs: [
+        "androidx.appcompat_appcompat",
+        "androidx.core_core",
+        "androidx-constraintlayout_constraintlayout",
+        "com.google.android.material_material",
+    ],
+
+    resource_dirs: ["src/main/res"],
+
+    optimize: {
+        enabled: true, // Disable for faster development iteration
+    },
+    sdk_version: "system_current",
+}
