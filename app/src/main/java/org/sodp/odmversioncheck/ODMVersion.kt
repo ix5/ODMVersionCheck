@@ -1,4 +1,4 @@
-package com.sodp.odmversioncheck
+package org.sodp.odmversioncheck
 
 import android.os.Build
 

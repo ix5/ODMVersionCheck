@@ -1,4 +1,4 @@
-package com.sodp.odmversioncheck
+package org.sodp.odmversioncheck
 
 import android.content.BroadcastReceiver
 import android.content.Context

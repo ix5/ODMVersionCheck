@@ -1,4 +1,4 @@
-package com.sodp.odmversioncheck
+package org.sodp.odmversioncheck
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
