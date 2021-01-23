@@ -27,10 +27,9 @@ class MainActivity : AppCompatActivity() {
         val gotVersionText: TextView = findViewById(R.id.gotVersion)
         val expVersion = getExpectedODMVersion()
         val gotVersion = getCurrentODMVersion()
-        if (expVersion != null)
-            expVersionText.text = expVersion.raw
-        if (gotVersion != null)
-            gotVersionText.text = gotVersion.raw
+        expVersionText.text = expVersion?.raw ?: "-"
+        gotVersionText.text = gotVersion?.raw ?: "-"
+
         if (expVersion != null && (gotVersion != null && expVersion.raw != gotVersion.raw))
             gotVersionText.setTextColor(Color.RED)
     }
