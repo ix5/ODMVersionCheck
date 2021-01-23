@@ -1,0 +1,18 @@
+module: "org.sodp.odmversioncheck.SomcOdmVersionProperties"
+owner: Odm
+
+prop {
+    api_name: "odm_version"
+    type: String
+    scope: Public
+    access: Readonly
+    prop_name: "ro.odm.version"
+}
+
+prop {
+    api_name: "odm_expected_version"
+    type: String
+    scope: Public
+    access: Readonly
+    prop_name: "ro.odm.expect.version"
+}

@@ -1,0 +1,10 @@
+sysprop_library {
+    name: "SomcOdmVersionProperties",
+    vendor: true,
+
+    property_owner: "Odm",
+
+    api_packages: ["android.sysprop"],
+
+    srcs: ["SomcOdmVersionProperties.sysprop"],
+}

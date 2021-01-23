@@ -3,11 +3,14 @@ package org.sodp.odmversioncheck
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
+import org.sodp.odmversioncheck.SomcOdmVersionProperties
+
 /**
  * Reads the property ro.odm.version
  */
 fun getCurrentODMVersion(): ODMVersion? {
-    val p = readSysProp("ro.odm.version")
+    //val p = readSysProp("ro.odm.version")
+    val p = SomcOdmVersionProperties.odm_version()
     return if(p != null) ODMVersion(p) else null
 }
 
@@ -15,9 +18,12 @@ fun getCurrentODMVersion(): ODMVersion? {
  * Reads the property ro.odm.expected.version
  */
 fun getExpectedODMVersion(): ODMVersion? {
-    val p = readSysProp("ro.odm.expect.version")
+    //val p = readSysProp("ro.odm.expect.version")
+    val p = SomcOdmVersionProperties.odm_expected_version()
     return if(p != null) ODMVersion(p) else null
 }
+
+
 
 /**
  * Read the given property key, return null if not set
