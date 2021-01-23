@@ -30,7 +30,11 @@ class MainActivity : AppCompatActivity() {
         expVersionText.text = expVersion?.raw ?: "-"
         gotVersionText.text = gotVersion?.raw ?: "-"
 
-        if (expVersion != null && (gotVersion != null && expVersion.raw != gotVersion.raw))
+        // We want to show a warning if:
+        // 1. expVersion == null
+        // 2. gotVersion == null
+        // 3. expVersion != gotVersion
+        if (expVersion == null || gotVersion == null || (expVersion.raw != gotVersion.raw))
             gotVersionText.setTextColor(Color.RED)
     }
 }
