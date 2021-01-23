@@ -5,7 +5,7 @@ android_app {
     vendor: true,
     privileged: true,
 
-    manifest: "src/main/AndroidManifest.xml",
+    manifest: "AndroidManifest.xml",
 
     srcs: ["src/**/*.kt"],
 
@@ -16,7 +16,7 @@ android_app {
         "com.google.android.material_material",
     ],
 
-    resource_dirs: ["src/main/res"],
+    resource_dirs: ["res"],
 
     optimize: {
         enabled: true, // Disable for faster development iteration
