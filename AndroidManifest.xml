@@ -16,12 +16,6 @@
                 <!-- Uncomment the following line to show the app inside the launcher -->
                 <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
         </intent-filter>
-        <activity android:name=".VersionCheckActivity"
-            android:excludeFromRecents="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-        </intent-filter>
-
         </activity>
 
         <receiver android:name="org.sodp.odmversioncheck.BootReceiver">
