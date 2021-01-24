@@ -3,15 +3,14 @@ package org.sodp.odmversioncheck
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
-import android.app.Service
 import android.content.Intent
-import android.os.IBinder
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import java.lang.reflect.Array.getBoolean
 
-class VersionCheck : Service() {
+class VersionCheckActivity : AppCompatActivity() {
     private val TAG: String = "ODMVersionCheck"
 
     override fun onCreate() {
@@ -84,9 +83,5 @@ class VersionCheck : Service() {
             //Using hardcode notification id 0, as we won't display anything after this!
             notify(0, builder.build())
         }
-        // Using hardcode notification id 0, as we won't display anything after this!
-        //startForeground(/* id: */ 0, notification);
     }
-
-    override fun onBind(intent: Intent?): IBinder? = null
 }
