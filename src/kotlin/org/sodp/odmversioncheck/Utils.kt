@@ -2,13 +2,14 @@ package org.sodp.odmversioncheck
 
 import java.io.BufferedReader
 import java.io.InputStreamReader
+import android.util.Log
 
 /**
  * Reads the property ro.odm.version
  */
 fun getCurrentODMVersion(): ODMVersion? {
     val p = readSysProp("ro.odm.version")
-    return if(p != null) ODMVersion(p) else null
+    return p?.let(::ODMVersion)
 }
 
 /**
@@ -16,7 +17,7 @@ fun getCurrentODMVersion(): ODMVersion? {
  */
 fun getExpectedODMVersion(): ODMVersion? {
     val p = readSysProp("ro.odm.expect.version")
-    return if(p != null) ODMVersion(p) else null
+    return p?.let(::ODMVersion)
 }
 
 /**
@@ -34,9 +35,6 @@ fun shellExec(cmd: String): String? {
     var o: String = ""
     val p = Runtime.getRuntime().exec(cmd)
     val b = BufferedReader(InputStreamReader(p.inputStream))
-    var line: String?
-    while (b.readLine().also { line = it } != null) {
-        o += line
-    }
+    while (b.readLine()?.also { o += it } != null) ;
     return if (o.isNotEmpty()) o else null
 }
