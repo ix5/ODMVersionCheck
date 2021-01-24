@@ -84,6 +84,8 @@ class VersionCheck : Service() {
             //Using hardcode notification id 0, as we won't display anything after this!
             notify(0, builder.build())
         }
+        // Using hardcode notification id 0, as we won't display anything after this!
+        //startForeground(/* id: */ 0, notification);
     }
 
     override fun onBind(intent: Intent?): IBinder? = null
